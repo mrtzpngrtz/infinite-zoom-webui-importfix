@@ -102,13 +102,13 @@ def on_ui_tabs():
                     )
                     importPrompts_button.upload(
                         fn=putPrompts,
+                        inputs=[importPrompts_button],
                         outputs=[
                             main_common_prompt_pre,
                             main_prompts,
                             main_common_prompt_suf,
                             main_negative_prompt,
-                        ],
-                        inputs=[importPrompts_button],
+                        ]
                     )
 
                     clearPrompts_button = gr.Button(
