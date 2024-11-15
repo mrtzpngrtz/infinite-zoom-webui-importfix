@@ -11,21 +11,21 @@ promptTableHeaders = ["Start at second [0,1,...]", "Prompt"]
 
 default_prompt = """
 {
-	"prePrompt": "Huge spectacular Waterfall in ",
-	"prompts": {
-		"data": [
-			[0, "a dense tropical forest"],
-			[2, "a Lush jungle"],
-			[3, "a Thick rainforest"],
-			[5, "a Verdant canopy"]
-		]
-	},
-	"postPrompt": "epic perspective,(vegetation overgrowth:1.3)(intricate, ornamentation:1.1),(baroque:1.1), fantasy, (realistic:1) digital painting , (magical,mystical:1.2) , (wide angle shot:1.4), (landscape composed:1.2)(medieval:1.1),(tropical forest:1.4),(river:1.3) volumetric lighting ,epic, style by Alex Horley Wenjun Lin greg rutkowski Ruan Jia (Wayne Barlowe:1.2)",
-	"negPrompt": "frames, border, edges, borderline, text, character, duplicate, error, out of frame, watermark, low quality, ugly, deformed, blur, bad-artist"
+    "prePrompt": "Huge spectacular Waterfall in ",
+    "prompts": {
+        "data": [
+            [0, "a dense tropical forest"],
+            [2, "a Lush jungle"],
+            [3, "a Thick rainforest"],
+            [5, "a Verdant canopy"]
+        ]
+    },
+    "postPrompt": "epic perspective,(vegetation overgrowth:1.3)(intricate, ornamentation:1.1),(baroque:1.1), fantasy, (realistic:1) digital painting , (magical,mystical:1.2) , (wide angle shot:1.4), (landscape composed:1.2)(medieval:1.1),(tropical forest:1.4),(river:1.3) volumetric lighting ,epic, style by Alex Horley Wenjun Lin greg rutkowski Ruan Jia (Wayne Barlowe:1.2)",
+    "negPrompt": "frames, border, edges, borderline, text, character, duplicate, error, out of frame, watermark, low quality, ugly, deformed, blur, bad-artist"
 }
 """
 
-empty_prompt = '{"prompts":{"data":[],"negPrompt":"", prePrompt:"", postPrompt:""}'
+empty_prompt = '{"prompts":{"data":[]},"negPrompt":"","prePrompt":"","postPrompt":""}'
 
 invalid_prompt = {
     "prompts": {
