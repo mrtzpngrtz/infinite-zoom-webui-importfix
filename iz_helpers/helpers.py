@@ -98,23 +98,27 @@ def putPrompts(files):
         with open(files.name, "r") as f:
             file_contents = f.read()
 
-            data = readJsonPrompt(file_contents,False)
+            data = readJsonPrompt(file_contents, False)
+            
+            # Extract the data array from prompts
+            prompts_data = data["prompts"]["data"] if "prompts" in data and "data" in data["prompts"] else []
+            
             return [
-                gr.Textbox.update(data["prePrompt"]),
-                gr.DataFrame.update(data["prompts"]),
-                gr.Textbox.update(data["postPrompt"]),
-                gr.Textbox.update(data["negPrompt"])
+                gr.Textbox.update(value=data.get("prePrompt", "")),
+                gr.DataFrame.update(value=prompts_data),  # Pass just the data array
+                gr.Textbox.update(value=data.get("postPrompt", "")),
+                gr.Textbox.update(value=data.get("negPrompt", ""))
             ]
 
-    except Exception:
+    except Exception as e:
         print(
-            "[InfiniteZoom:] Loading your prompt failed. It seems to be invalid. Your prompt table is preserved."
+            f"[InfiniteZoom:] Loading your prompt failed. Error: {str(e)}. Your prompt table is preserved."
         )
         
         # error only be shown with raise, so ui gets broken.
         #asyncio.run(showGradioErrorAsync("Loading your prompts failed. It seems to be invalid. Your prompt table has been preserved.",5))
 
-        return [gr.Textbox.update(), gr.DataFrame.update(), gr.Textbox.update(),gr.Textbox.update()]
+        return [gr.Textbox.update(), gr.DataFrame.update(), gr.Textbox.update(), gr.Textbox.update()]
 
 
 def clearPrompts():
